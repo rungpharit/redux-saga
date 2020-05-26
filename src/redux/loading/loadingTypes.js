@@ -1,0 +1,5 @@
+export const load = {
+  LOADING : "LOADING",
+  LOADING_SUCCESS : "LOADING_SUCEESS",
+  LOADING_ERROR : "LOADING_ERROR"
+}

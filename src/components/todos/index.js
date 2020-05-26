@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 import UserId from './userId'
 import styles from './todos.module.css'
+
+import { loading } from '../../redux/loading/loadingActions'
 
 class Todos extends Component {
 
@@ -64,8 +67,8 @@ class Todos extends Component {
         <div>      
           {users}
         </div>
-        <div className={styles.divButton}>
-          <button className={styles.button}>LoadMore</button>
+        <div className={styles.divButton} onClick={() => {this.props.loading()}} >
+          <button className={styles.button}>{ this.props.isLoading ?'Loading...'   : 'LoadMore'  }</button>
         </div>
       </div>
    
@@ -74,6 +77,17 @@ class Todos extends Component {
 }
 
 
+const mapStateToProps = state => {
+  return  {
+    todos:state.setTodos.todos,
+    isLoading:state.isLoading.visible
+  }
+}
 
+const mapDispatchToProps = dispatch => {
+  return {
+    loading: () => dispatch(loading())
+  }
+}
 
-export default Todos;
+export default connect(mapStateToProps,mapDispatchToProps)(Todos);
