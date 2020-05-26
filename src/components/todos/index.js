@@ -67,6 +67,7 @@ class Todos extends Component {
         <div>      
           {users}
         </div>
+        {this.props.error && <div className={styles.error}>{JSON.stringify(this.props.error)}</div>}
         <div className={styles.divButton} onClick={() => {this.props.loading()}} >
           <button className={styles.button}>{ this.props.isLoading ?'Loading...'   : 'LoadMore'  }</button>
         </div>
@@ -80,7 +81,8 @@ class Todos extends Component {
 const mapStateToProps = state => {
   return  {
     todos:state.setTodos.todos,
-    isLoading:state.isLoading.visible
+    isLoading:state.isLoading.visible,
+    err : state.err.error
   }
 }
 
