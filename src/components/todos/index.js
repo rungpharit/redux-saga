@@ -59,7 +59,7 @@ class Todos extends Component {
 
   render() {
 
-    let users =  this.state.todos.map((user,index) => { return (<UserId key={index} id={index} user={user} />) })
+    let users =  this.props.todos.map((user,index) => { return (<UserId key={index} id={index} user={user} />) })
 
     return (
      
