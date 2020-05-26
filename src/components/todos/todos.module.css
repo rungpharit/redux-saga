@@ -1,0 +1,20 @@
+.mainContainer{
+  margin: 5px;
+}
+
+.divButton{
+  display: flex;
+  justify-content: center
+}
+.button{
+  background-color: #456774;
+  color: white;
+  padding: 13px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: teal;
+}

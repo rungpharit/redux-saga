@@ -1,0 +1,19 @@
+.mainContainer {
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #333333;
+}
+
+.textUser {
+  padding-top: 10px;
+  font-size: 25px;
+  color: white;
+}
+
+.flexContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+ 
+}
